@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="imageApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="ImageController">
+    <div>
+        <div class="thumbnail" ng-repeat="image in images" ng-click="enlargeImage(image)">
+            <img src="{{image.url}}" alt="Random Image">
+        </div>
+    </div>
+
+    <div ng-show="enlargedImage" class="enlarged">
+        <img ng-src="{{ enlargedImage }}" alt="Enlarged Image" ng-click="closeImage()">
+    </div>
+
+    <script src="app.js"></script>
+
+
+  <!-- special scripts for integration in App Gallery - must be placed at the bottom of the HTML after your code -->
+  <script>
+    // custom config for the MTW app 
+    const mtwAppConfig = {
+      border: true // app border in the MTW page                    
+    }
+
+    ///////////////////////////////////////////////////////
+    // implement this functions in order to use private API        
+    const sendPrivateApiRequest = async () => {
+      // your code here:
+      // sendRequestToParent({ cat: 'getAssets' })
+    }
+
+    const acceptPrivateApiResponse = async (data) => {
+      // process received data here:
+      // console.log(data)
+    }
+
+    // use this in order to send on document load
+    document.addEventListener('DOMContentLoaded', () => {
+      // your code here:
+      //sendRequestToParent({ method: 'getAssets' })
+    })
+
+  </script>
+  <script src="https://morethanwallet.com/appstore/index.js"></script>
+</body>
+</html>

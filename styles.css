@@ -1,0 +1,18 @@
+/* styles.css */
+.thumbnail {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+}
+.thumbnail img {
+    max-width: 90px;
+    max-height: 90px;
+    transition: transform 0.2s ease;
+}
+.enlarged {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 9999;
+}
